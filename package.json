@@ -2,7 +2,7 @@
   "name": "truthor",
   "version": "0.1.0",
   "private": true,
-  "homepage": "www.truthorgame.com/build",
+  "homepage": "www.truthorgame.com",
   "dependencies": {
     "@material-ui/core": "^4.9.13",
     "@material-ui/icons": "^4.9.1",
@@ -20,6 +20,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -b master -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
