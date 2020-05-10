@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/truthor/build/static/css/main.f027f12a.chunk.css",
+    "main.js": "/truthor/build/static/js/main.446c2908.chunk.js",
+    "main.js.map": "/truthor/build/static/js/main.446c2908.chunk.js.map",
+    "runtime-main.js": "/truthor/build/static/js/runtime-main.87467467.js",
+    "runtime-main.js.map": "/truthor/build/static/js/runtime-main.87467467.js.map",
+    "static/js/2.2a7db656.chunk.js": "/truthor/build/static/js/2.2a7db656.chunk.js",
+    "static/js/2.2a7db656.chunk.js.map": "/truthor/build/static/js/2.2a7db656.chunk.js.map",
+    "index.html": "/truthor/build/index.html",
+    "precache-manifest.f0e58191a3e7f1c0e67ebaa45e8cefca.js": "/truthor/build/precache-manifest.f0e58191a3e7f1c0e67ebaa45e8cefca.js",
+    "service-worker.js": "/truthor/build/service-worker.js",
+    "static/css/main.f027f12a.chunk.css.map": "/truthor/build/static/css/main.f027f12a.chunk.css.map",
+    "static/js/2.2a7db656.chunk.js.LICENSE.txt": "/truthor/build/static/js/2.2a7db656.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/truthor/build/static/media/DMMono-Regular.f0d6313e.ttf",
+    "static/media/cheers.mp4": "/truthor/build/static/media/cheers.f29e7cef.mp4"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.87467467.js",
+    "static/js/2.2a7db656.chunk.js",
+    "static/css/main.f027f12a.chunk.css",
+    "static/js/main.446c2908.chunk.js"
+  ]
+}
