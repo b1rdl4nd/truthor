@@ -9,7 +9,7 @@ import Grid from "@material-ui/core/Grid";
 
 const decks = {
   "Ice Breakers": iceBreaker,
-  "Deeply Personal, Highly Uncomfortable": emotions,
+  "Reflection": emotions,
   Silly: silly,
   Storytelling: storyTelling,
   "Big Picture": bigPicture,
@@ -18,7 +18,7 @@ const decks = {
 const deckNames = [
   "Ice Breakers",
   "Big Picture",
-  "Deeply Personal, Highly Uncomfortable",
+  "Reflection",
   "Silly",
   "Storytelling",
 ];

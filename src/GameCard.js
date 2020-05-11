@@ -111,8 +111,10 @@ const GameCard = ({
   };
 
   const nowAdvanceQuestion = () => {
-    setShouldShowVideo(false);
-    onOr();
+    setTimeout(() => {
+      setShouldShowVideo(false);
+      onOr();
+    }, 3000)
   };
   const title = window.innerWidth < 400 ? deckName : `Truthor (${deckName})`
   return (
