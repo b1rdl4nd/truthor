@@ -92,7 +92,37 @@ const Game = () => {
   const colorPair = shuffledColors[colorIndex]
   const background = `linear-gradient(135deg, ${colorPair[1]} 0%, ${colorPair[0]} 100%)`
   const style = window.innerWidth < 400 ? {} : {background, height: '100%', width: '100%'}
-  return (
+  const gameCard = (
+    <GameCard
+      isEricAndreModeActivated={isEricAndreModeActivated}
+      colorPair={shuffledColors[colorIndex]}
+      isViewingSettings={isViewingSettings}
+      toggleSettings={toggleSettings}
+      question={deck[index]}
+      onTruth={onTruth}
+      onOr={onOr}
+      transform={transform}
+      opacity={opacity}
+    />
+  )
+  const settingsCard = (
+    <SettingsCard
+      isEricAndreModeActivated={isEricAndreModeActivated}
+      setIsEricAndreModeActivated={setIsEricAndreModeActivated}
+      isViewingIntroduction={isViewingIntroduction}
+      setIsViewingIntroduction={setIsViewingIntroduction}
+      changeDeck={changeDeck}
+      currentDeck={deckName}
+      deckNames={deckNames}
+      orCount={orCount}
+      truthCount={truthCount}
+      isViewingSettings={isViewingSettings}
+      toggleSettings={toggleSettings}
+      transform={transform}
+      opacity={opacity}
+    />
+  )
+  return window.innerWidth > 400 ? (
     <Grid
       style={style}
       container
@@ -102,36 +132,14 @@ const Game = () => {
       direction="column"
     >
     <Grid item>
-      <GameCard
-        isEricAndreModeActivated={isEricAndreModeActivated}
-        colorPair={shuffledColors[colorIndex]}
-        isViewingSettings={isViewingSettings}
-        toggleSettings={toggleSettings}
-        question={deck[index]}
-        onTruth={onTruth}
-        onOr={onOr}
-        transform={transform}
-        opacity={opacity}
-      />
+      {gameCard}
     </Grid>
     <Grid item>
-      <SettingsCard
-        isEricAndreModeActivated={isEricAndreModeActivated}
-        setIsEricAndreModeActivated={setIsEricAndreModeActivated}
-        isViewingIntroduction={isViewingIntroduction}
-        setIsViewingIntroduction={setIsViewingIntroduction}
-        changeDeck={changeDeck}
-        currentDeck={deckName}
-        deckNames={deckNames}
-        orCount={orCount}
-        truthCount={truthCount}
-        isViewingSettings={isViewingSettings}
-        toggleSettings={toggleSettings}
-        transform={transform}
-        opacity={opacity}
-      />
+      {settingsCard}
     </Grid>
     </Grid>
+  ) : (
+  <>{gameCard}{settingsCard}</>
   );
 };
 export default Game;
