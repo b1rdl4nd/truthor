@@ -8,55 +8,52 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import Select from "@material-ui/core/Select";
 import FormControl from "@material-ui/core/FormControl";
 import Link from "@material-ui/core/Link";
-import InputLabel from "@material-ui/core/InputLabel";
 import { connect } from "react-redux";
-import Switch from '@material-ui/core/Switch';
+import Switch from "@material-ui/core/Switch";
 import SettingsButton from "./SettingsButton";
 import AnimatedCard from "./AnimatedCard";
-import FormLabel from '@material-ui/core/FormLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
+import FormLabel from "@material-ui/core/FormLabel";
 
 const settingsCardStyle = makeStyles({
-  introHeader: {
-  },
+  introHeader: {},
   cardMobile: {
-    textAlign: 'left',
-    color: props => (props.isViewingIntroduction ? "white" : "black"),
-    background: props =>
+    textAlign: "left",
+    color: (props) => (props.isViewingIntroduction ? "white" : "black"),
+    background: (props) =>
       props.isViewingIntroduction
         ? "linear-gradient(135deg, #CCABD8 0%, #E5C1CD 100%)"
         : "white",
     position: "absolute",
     height: `100%`,
     width: `100%`,
-    willChange: " transform, opacity"
+    willChange: " transform, opacity",
   },
   cardDesktop: {
-    textAlign: 'left',
-    color: props => (props.isViewingIntroduction ? "white" : "black"),
-    background: props =>
+    textAlign: "left",
+    color: (props) => (props.isViewingIntroduction ? "white" : "black"),
+    background: (props) =>
       props.isViewingIntroduction
         ? "linear-gradient(135deg, #CCABD8 0%, #E5C1CD 100%)"
         : "white",
     position: "absolute",
     willChange: " transform, opacity",
-    height: '50%',
-    width: '60%',
+    height: "50%",
+    width: "60%",
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    margin: 'auto',
-    overflow: 'auto',
-    minHeight: '310px',
-    maxHeight: '400px'
+    margin: "auto",
+    overflow: "auto",
+    minHeight: "310px",
+    maxHeight: "400px",
   },
   topSpacing: {
-    marginTop: "32px !important"
+    marginTop: "32px !important",
   },
   formControl: {
     minWidth: "120px",
-    marginBottom: '16px'
+    marginBottom: "16px",
   },
   beginButton: {
     background: "linear-gradient(135deg, #FE676E 0%, #FD8F52 100%)",
@@ -64,8 +61,8 @@ const settingsCardStyle = makeStyles({
     display: "flex",
     marginTop: "18px",
     marginLeft: "auto",
-    marginRight: "auto"
-  }
+    marginRight: "auto",
+  },
 });
 
 const SettingsBody = ({
@@ -77,12 +74,16 @@ const SettingsBody = ({
   options,
   truthCount,
   orCount,
-  toggleSettings
+  toggleSettings,
 }) => {
   return (
     <>
       <CardHeader
-        title={<span style={{position: 'absolute', top: '18px', left: '16px'}}>Settings</span>}
+        title={
+          <span style={{ position: "absolute", top: "18px", left: "16px" }}>
+            Settings
+          </span>
+        }
         action={
           <SettingsButton
             isViewingSettings={true}
@@ -92,23 +93,32 @@ const SettingsBody = ({
       ></CardHeader>
       <CardContent>
         <div>
-        <FormControl className={styles.formControl}>
-          <FormLabel component="legend">Question Deck</FormLabel>
-          <Select native value={currentDeck} onChange={e => changeDeck(e.target.value)}>
-            {options}
-          </Select>
-        </FormControl>
+          <FormControl className={styles.formControl}>
+            <FormLabel component="legend">Question Deck</FormLabel>
+            <Select
+              native
+              value={currentDeck}
+              onChange={(e) => changeDeck(e.target.value)}
+            >
+              {options}
+            </Select>
+          </FormControl>
         </div>
         <div>
-        <FormControl>
-          <FormLabel component="legend">Eric Andre Mode ({isEricAndreModeActivated ? 'Activated' : 'Deactivated'})</FormLabel>
-          <Switch
-            checked={isEricAndreModeActivated}
-            onChange={e => {setIsEricAndreModeActivated(!isEricAndreModeActivated)}}
-            name="checkedA"
-            inputProps={{ 'aria-label': 'secondary checkbox' }}
-          />
-        </FormControl>
+          <FormControl>
+            <FormLabel component="legend">
+              Eric Andre Mode (
+              {isEricAndreModeActivated ? "Activated" : "Deactivated"})
+            </FormLabel>
+            <Switch
+              checked={isEricAndreModeActivated}
+              onChange={(e) => {
+                setIsEricAndreModeActivated(!isEricAndreModeActivated);
+              }}
+              name="checkedA"
+              inputProps={{ "aria-label": "secondary checkbox" }}
+            />
+          </FormControl>
         </div>
         <Typography className={styles.topSpacing}>
           Y'all've selected Truth {truthCount} time{truthCount !== 1 ? "s" : ""}
@@ -179,9 +189,15 @@ const SettingsCard = ({
   toggleSettings,
   transform,
   opacity,
-  z
+  z,
 }) => {
-  const options = deckNames.map((name, index) => {return (<option key={index} value={name}>{name}</option>)})
+  const options = deckNames.map((name, index) => {
+    return (
+      <option key={index} value={name}>
+        {name}
+      </option>
+    );
+  });
   const styles = settingsCardStyle({ isViewingIntroduction });
   const settingsDisplay = !isViewingSettings ? "block" : "none";
 
@@ -205,7 +221,8 @@ const SettingsCard = ({
       toggleSettings={toggleSettings}
     />
   );
-  const cardStyle = window.innerWidth < 400 ? styles.cardMobile : styles.cardDesktop
+  const cardStyle =
+    window.innerWidth < 400 ? styles.cardMobile : styles.cardDesktop;
   return (
     <AnimatedCard
       raised={true}
@@ -213,8 +230,8 @@ const SettingsCard = ({
       className={cardStyle}
       style={{
         display: settingsDisplay,
-        opacity: opacity.interpolate(o => 1 - o),
-        transform
+        opacity: opacity.interpolate((o) => 1 - o),
+        transform,
       }}
     >
       {body}
@@ -222,8 +239,8 @@ const SettingsCard = ({
   );
 };
 
-const mapStateToProps = state => ({
-  z: state.isisShowingIntroduction
-})
+const mapStateToProps = (state) => ({
+  z: state.isisShowingIntroduction,
+});
 
 export default connect(mapStateToProps, null)(SettingsCard);

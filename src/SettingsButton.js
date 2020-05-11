@@ -6,8 +6,8 @@ import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
 
 const settingsButtonStyle = makeStyles({
   icon: {
-    color: props => (props.isViewingSettings ? "black" : "white")
-  }
+    color: (props) => (props.isViewingSettings ? "black" : "white"),
+  },
 });
 
 const SettingsButton = ({ isViewingSettings, toggleSettings }) => {
