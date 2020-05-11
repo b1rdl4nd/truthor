@@ -155,7 +155,7 @@ const IntroBody = ({ styles, setIsViewingIntroduction, toggleSettings }) => {
           "pass" action - then press the corresponding button.{" "}
         </Typography>
         <Typography>
-          4. To view your game's selection stats, change the deck of cards, and
+          4. To change the deck of cards, view your game's selection stats, and
           more - click the <SettingsIcon /> icon.
         </Typography>
         <Typography>5. Have fun!</Typography>

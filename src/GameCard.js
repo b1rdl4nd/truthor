@@ -70,7 +70,7 @@ const EricAndre = ({ advance }) => {
       style={isMobile ? mobileStyle : desktopStyle}
       autoPlay
       onEnded={advance}
-      playsinline
+      playsInline
     >
       <source src={CHEERS} type="video/mp4" />
     </video>

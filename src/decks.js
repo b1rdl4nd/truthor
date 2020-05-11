@@ -14,6 +14,8 @@ export const bigPicture = [
   "What do you think of Universal Basic Income?",
   "Will automation replace all jobs? If not, what ones would be excluded?",
   "Is space travel viable in our lifetime?",
+  "What are the roots of inequality?",
+  "What should the purpose of the media be? What is it's actual function?",
 ];
 
 export const silly = [
@@ -33,7 +35,6 @@ export const emotions = [
   "What successes are you proud of?",
   "What kind of person do you want to be?",
   "What kind of person do you not want to be?",
-
 ];
 
 export const iceBreaker = [
@@ -47,4 +48,5 @@ export const iceBreaker = [
   "What are your guilty pleasures?",
   "If you could live anywhere, where would that be?",
   "What are your hobbies?",
+  "What's your morning routine?",
 ];
