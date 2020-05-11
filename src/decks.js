@@ -2,7 +2,7 @@ export const storyTelling = [
   "While out for a walk, you meet an alien. What next?",
   "What could life look like in a 100 years?",
   "A person from 1850 blinks and now is in the present day - what do they experience?",
-  "You are teleported 1000 years into the future - what's it like?",
+  "You are teleported 300 years into the future - what's it like?",
 ];
 
 export const bigPicture = [
