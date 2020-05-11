@@ -104,6 +104,7 @@ const Game = () => {
       : { background, height: "100%", width: "100%" };
   const gameCard = (
     <GameCard
+      deckName={deckName}
       isEricAndreModeActivated={isEricAndreModeActivated}
       colorPair={shuffledColors[colorIndex]}
       isViewingSettings={isViewingSettings}

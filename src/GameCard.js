@@ -78,6 +78,7 @@ const EricAndre = ({ advance }) => {
 };
 
 const GameCard = ({
+  deckName,
   isEricAndreModeActivated,
   colorPair,
   isViewingSettings,
@@ -113,6 +114,7 @@ const GameCard = ({
     setShouldShowVideo(false);
     onOr();
   };
+  const title = window.innerWidth < 400 ? deckName : `Truthor (${deckName})`
   return (
     <AnimatedCard
       raised={true}
@@ -126,7 +128,7 @@ const GameCard = ({
       <CardHeader
         title={
           <span style={{ position: "absolute", top: "18px", left: "16px" }}>
-            Truthor
+            {title}
           </span>
         }
         action={
