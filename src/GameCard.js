@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import SettingsButton from "./SettingsButton";
 import AnimatedCard from "./AnimatedCard";
 import CHEERS from './cheers.mp4'
+
 const cardStyles = makeStyles({
   cardMobile: {
     position: "absolute",
@@ -58,12 +59,12 @@ const cardStyles = makeStyles({
   }
 });
 
-const EricAndre = () => {
+const EricAndre = ({advance}) => {
   const isMobile = window.innerWidth < 400
   const desktopStyle = {height: '250px'}
   const mobileStyle = {width: '100%'}
   return (
-    <video style={isMobile ? mobileStyle : desktopStyle} autoPlay>
+    <video style={isMobile ? mobileStyle : desktopStyle} autoPlay onEnded={advance} playsinline>
         <source src={CHEERS} type='video/mp4' />
     </video>
   )
@@ -98,6 +99,11 @@ const GameCard = ({
       }, 1500)
     }
   }
+
+  const nowAdvanceQuestion = () => {
+    setShouldShowVideo(false)
+    onOr()
+  }
   return (
     <AnimatedCard
       raised={true}
@@ -118,7 +124,7 @@ const GameCard = ({
         }
       ></CardHeader>
       <CardContent className={styles.cardContent}>
-        {shouldShowVideo ? <EricAndre/> : <Typography variant="h4">{question}</Typography>}
+        {shouldShowVideo ? <EricAndre advance={nowAdvanceQuestion}/> : <Typography variant="h4">{question}</Typography>}
       </CardContent>
       <CardActions className={styles.cardActions}>
         <Button
