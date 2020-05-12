@@ -67,9 +67,16 @@ const EricAndre = ({ advance }) => {
   const mobileStyle = { width: "100%" };
   return (
     <video
+      onError={advance}
+      onAbort={advance}
       style={isMobile ? mobileStyle : desktopStyle}
       autoPlay
-      onEnded={advance}
+      onLoadedData={() => {
+        const timeout = window.innerWidth < 400 ? 5000 : 1500
+        setTimeout(() => {
+          advance()
+        }, timeout)
+      }}
       playsInline
     >
       <source src={CHEERS} type="video/mp4" />

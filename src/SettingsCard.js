@@ -141,7 +141,7 @@ const SettingsBody = ({
 const IntroBody = ({ styles, setIsViewingIntroduction, toggleSettings }) => {
   return (
     <>
-      <CardHeader className={styles.introHeader} title="Truthor"></CardHeader>
+      <CardHeader className={styles.introHeader} title="Truthor v0.3.4"></CardHeader>
       <CardContent>
         <Typography>
           1. Each round, you'll be presented with a question.
