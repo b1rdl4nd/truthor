@@ -71,12 +71,7 @@ const EricAndre = ({ advance }) => {
       onAbort={advance}
       style={isMobile ? mobileStyle : desktopStyle}
       autoPlay
-      onLoadedData={() => {
-        const timeout = window.innerWidth < 400 ? 5000 : 1500
-        setTimeout(() => {
-          advance()
-        }, timeout)
-      }}
+      onEnded={advance}
       playsInline
     >
       <source src={CHEERS} type="video/mp4" />
@@ -110,18 +105,12 @@ const GameCard = ({
       onOr();
     } else {
       setShouldShowVideo(true);
-      setTimeout(() => {
-        setShouldShowVideo(false);
-        onOr();
-      }, 1500);
     }
   };
 
   const nowAdvanceQuestion = () => {
-    setTimeout(() => {
-      setShouldShowVideo(false);
-      onOr();
-    }, 3000)
+    setShouldShowVideo(false);
+    onOr();
   };
   const title = window.innerWidth < 400 ? deckName : `Truthor (${deckName})`
   return (

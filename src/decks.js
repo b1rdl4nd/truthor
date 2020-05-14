@@ -1,14 +1,8 @@
-export const storyTelling = [
-  "While out for a walk, you meet an alien. What next?",
-  "What could life look like in a 100 years?",
-  "A person from 1850 blinks and now is in the present day - what do they experience?",
-  "You are teleported 300 years into the future - what's it like?",
-];
-
 export const bigPicture = [
   "Can we know the future?",
   "Is this the only reality?",
   "Will we be able to understand consciousness?",
+  "What drives the popularity and perceived legitimacy of conspiracy theories?",
   "Is there an afterlife?",
   "Can we trust artificial intelligence?",
   "What do you think of Universal Basic Income?",
@@ -18,19 +12,21 @@ export const bigPicture = [
   "What should the purpose of the media be? What is it's actual function?",
 ];
 
-export const silly = [
-  "Who is more likely to join a cult?",
-];
 
 export const emotions = [
   'Even on a "bad" day, what gives you hope?',
   "How would you rate your self confidence?",
   "Do you say no too often?",
+  "Do you worry about the future? How does that behaviour help?",
   "When was the last time you had a deeply held belief changed?",
+  "What would you tell a past self?",
+  "What defines your concept of masculinity?",
+  "What defines your concept of femininity?",
   "What types of situations do you respond differently than what you would like?",
   "Are you more proactive or reactive?",
   "Do you tend to focus on positive or negative traits? Is the focus different when viewing yourself or others?",
   "What's your emotional communication style?",
+  "What don't you know?",
   "What failures can you admit?",
   "What successes are you proud of?",
   "What kind of person do you want to be?",
@@ -40,11 +36,19 @@ export const emotions = [
 export const iceBreaker = [
   "What would you do if you won the lottery?",
   "What's an influential song or album to you?",
+  "While out for a walk, you meet an alien. What next?",
+  "What could life look like in a 100 years?",
+  "A person from 1850 blinks and now is in the present day - what do they experience?",
+  "You are teleported 300 years into the future - what's it like?",
   "Favourite live event memory?",
   "What halloween costume have you done that has been your favourite?",
   'Do you have "that" relative?',
   "What TV gameshow could you win?",
+  "How would you describe yourself in three words?",
   "Have you ever used a fake name?",
+  "What super power would you have? What would your name be?",
+  "How would you like to die?",
+  "Who is more likely to join a cult?",
   "What are your guilty pleasures?",
   "If you could live anywhere, where would that be?",
   "What are your hobbies?",

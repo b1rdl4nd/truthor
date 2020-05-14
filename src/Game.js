@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSpring } from "react-spring";
-import { iceBreaker, emotions, silly, bigPicture, storyTelling } from "./decks";
+import { iceBreaker, emotions, bigPicture } from "./decks";
 import "./App.css";
 
 import SettingsCard from "./SettingsCard";
@@ -10,8 +10,6 @@ import Grid from "@material-ui/core/Grid";
 const decks = {
   "Ice Breakers": iceBreaker,
   "Reflection": emotions,
-  Silly: silly,
-  Storytelling: storyTelling,
   "Big Picture": bigPicture,
 };
 
@@ -19,8 +17,6 @@ const deckNames = [
   "Reflection",
   "Ice Breakers",
   "Big Picture",
-  "Silly",
-  "Storytelling",
 ];
 
 const colorPairs = [
@@ -44,6 +40,7 @@ function shuffle(array) {
 }
 
 const shuffledColors = shuffle(colorPairs);
+const shuffledInitialDeck = shuffle(decks[deckNames[0]])
 
 const Game = () => {
   const [isEricAndreModeActivated, setIsEricAndreModeActivated] = useState(
@@ -67,7 +64,7 @@ const Game = () => {
   });
 
   const [index, setIndex] = useState(0);
-  const [deck, setDeck] = useState(decks[deckName]);
+  const [deck, setDeck] = useState(shuffledInitialDeck);
   const nextQuestion = () => {
     const lastIndex = deck.length;
     index >= lastIndex - 1 ? setIndex(0) : setIndex(index + 1);
