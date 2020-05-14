@@ -65,13 +65,22 @@ const EricAndre = ({ advance }) => {
   const isMobile = window.innerWidth < 400;
   const desktopStyle = { height: "250px" };
   const mobileStyle = { width: "100%" };
+  const [escapeHatchTimeout, setEscapeHatchTimeout] = useState(null)
+  const clearTimeoutAndAdvance = () => {
+      	clearTimeout(escapeHatchTimeout)
+      	advance()
+  }
   return (
     <video
-      onError={advance}
-      onAbort={advance}
+      onError={clearTimeoutAndAdvance}
+      onAbort={clearTimeoutAndAdvance}
+      onLoadedData={() => {
+      	const timeOut = setTimeout(() => {advance()}, 10000)
+      	setEscapeHatchTimeout(timeOut)
+      }}
       style={isMobile ? mobileStyle : desktopStyle}
       autoPlay
-      onEnded={advance}
+      onEnded={clearTimeoutAndAdvance}
       playsInline
     >
       <source src={CHEERS} type="video/mp4" />
@@ -109,8 +118,10 @@ const GameCard = ({
   };
 
   const nowAdvanceQuestion = () => {
-    setShouldShowVideo(false);
-    onOr();
+  	if (isEricAndreModeActivated && shouldShowVideo) {
+    	setShouldShowVideo(false);
+    	onOr();
+  	}
   };
   const title = window.innerWidth < 400 ? deckName : `Truthor (${deckName})`
   return (
