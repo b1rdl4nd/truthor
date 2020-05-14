@@ -146,15 +146,14 @@ const IntroBody = ({ styles, setIsViewingIntroduction, toggleSettings }) => {
       <CardHeader className={styles.introHeader} title="Truthor"></CardHeader>
       <CardContent>
         <Typography>
-          1. Each round, you'll be presented with a question.
+          1. Each round, you'll be presented with a question - you either answer the question or "pass".
         </Typography>
         <Typography>
-          2. As a group, decide on an action to perform to "pass" on answering
+          2. Before beginning, as a group, decide on an action to perform to "pass" on answering
           the question.
         </Typography>
         <Typography>
-          3. For each question, either answer it or perform the agreed upon
-          "pass" action - then press the corresponding button.{" "}
+          3. For each question, after answering or "passing" - press the corresponding button.
         </Typography>
         <Typography>
           4. To change the deck of cards, view your game's selection stats, and
